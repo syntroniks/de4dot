@@ -156,6 +156,8 @@ namespace de4dot.code.deobfuscators.SmartAssembly {
 		}
 
 		void GuessVersion() {
+			approxVersion = new Version(6, 9, 0, 0);
+			return;
 			if (poweredByAttributeString == "Powered by SmartAssembly") {
 				ObfuscatorName = "SmartAssembly 5.0/5.1";
 				approxVersion = new Version(5, 0, 0, 0);
@@ -415,7 +417,7 @@ namespace de4dot.code.deobfuscators.SmartAssembly {
 		}
 
 		public override void DeobfuscateEnd() {
-			canRemoveTypes = FindBigType() == null;
+			canRemoveTypes = false;// FindBigType() == null;
 			RemoveProxyDelegates(proxyCallFixer, canRemoveTypes);
 			RemoveMemoryManagerStuff();
 			RemoveTamperProtectionStuff();

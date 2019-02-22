@@ -67,6 +67,13 @@ namespace de4dot.code.deobfuscators.SmartAssembly {
 			"System.Byte[]",
 			"System.Int32",
 		};
+		static string[] fields4x = new string[] {
+			"System.String[]",
+			"System.Byte[]",
+			"System.Collections.Generic.Dictionary`2<System.Int32,System.String>",
+			"System.Boolean",
+			"System.Int32",
+		};
 		StringDecrypterVersion GuessVersion(MethodDef cctor) {
 			var fieldTypes = new FieldTypes(stringsEncodingClass);
 			if (fieldTypes.Exactly(fields2x))

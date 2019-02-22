@@ -74,8 +74,8 @@ namespace de4dot.code.deobfuscators.SmartAssembly {
 				if (resourceDecrypterInfo.DES_Key == null || resourceDecrypterInfo.DES_IV == null)
 					throw new ApplicationException("DES key / iv have not been set yet");
 				using (var provider = new DESCryptoServiceProvider()) {
-					provider.Key = resourceDecrypterInfo.DES_Key;
-					provider.IV  = resourceDecrypterInfo.DES_IV;
+					provider.Key = resourceDecrypterInfo.DES_IV;
+					provider.IV  = resourceDecrypterInfo.DES_Key;
 					using (var transform = provider.CreateDecryptor()) {
 						return Decrypt(transform.TransformFinalBlock(encryptedData, 4, encryptedData.Length - 4));
 					}

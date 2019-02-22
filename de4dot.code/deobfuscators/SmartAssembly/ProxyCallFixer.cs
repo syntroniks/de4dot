@@ -26,14 +26,14 @@ namespace de4dot.code.deobfuscators.SmartAssembly {
 	class ProxyCallFixer : ProxyCallFixer1 {
 		static readonly Dictionary<char, int> specialCharsDict = new Dictionary<char, int>();
 		static readonly char[] specialChars = new char[] {
-			'\x01', '\x02', '\x03', '\x04', '\x05', '\x06', '\x07', '\x08',
-			'\x0E', '\x0F', '\x10', '\x11', '\x12', '\x13', '\x14', '\x15',
-			'\x16', '\x17', '\x18', '\x19', '\x1A', '\x1B', '\x1C', '\x1D',
-			'\x1E', '\x1F', '\x7F', '\x80', '\x81', '\x82', '\x83', '\x84',
-			'\x86', '\x87', '\x88', '\x89', '\x8A', '\x8B', '\x8C', '\x8D',
-			'\x8E', '\x8F', '\x90', '\x91', '\x92', '\x93', '\x94', '\x95',
-			'\x96', '\x97', '\x98', '\x99', '\x9A', '\x9B', '\x9C', '\x9D',
-			'\x9E', '\x9F',
+					'\u007f','\u0089','\u001e','\u0017','\u008b','\u0092','\u0095','\u0093',
+					'\u0010','\u0004','\u0081','\u009a','\u009c','\u0097','\u001b','\u0088',
+					'\u009d','\u008a','\a','\u0019','\u008f','\u0086','\u009e','\u001d',
+					'\u008d','\u0099','\u0098','\b','\u0082','\u0096','\u0018','\u0016',
+					'\u0003','\u0014','\u000f','\u0090','\u009f','\u0080','\u008e','\u0087',
+					'\u0015','\u0001','\u001c','\u0005','\u008c','\u0011','\u0094','\u0012',
+					'\u001a','\u000e','\u0013','\u009b','\u0083','\u0006','\u001f','\u0091',
+					'\u0084','\u0002'
 		};
 
 		ISimpleDeobfuscator simpleDeobfuscator;
