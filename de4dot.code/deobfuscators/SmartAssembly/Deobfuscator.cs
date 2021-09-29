@@ -293,7 +293,7 @@ namespace de4dot.code.deobfuscators.SmartAssembly {
 			resourceDecrypter = new ResourceDecrypter(resourceDecrypterInfo);
 			assemblyResolver = new AssemblyResolver(resourceDecrypter, assemblyResolverInfo);
 			resourceResolver = new ResourceResolver(module, assemblyResolver, resourceResolverInfo);
-
+			
 			InitStringDecrypterInfos();
 			assemblyResolverInfo.FindTypes();
 			resourceResolverInfo.FindTypes();
@@ -417,7 +417,7 @@ namespace de4dot.code.deobfuscators.SmartAssembly {
 		}
 
 		public override void DeobfuscateEnd() {
-			canRemoveTypes = false;// FindBigType() == null;
+			canRemoveTypes = FindBigType() == null;
 			RemoveProxyDelegates(proxyCallFixer, canRemoveTypes);
 			RemoveMemoryManagerStuff();
 			RemoveTamperProtectionStuff();

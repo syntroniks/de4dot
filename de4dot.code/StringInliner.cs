@@ -137,6 +137,7 @@ namespace de4dot.code {
 		}
 
 		public void Add(MethodDef method, Func<MethodDef, MethodSpec, object[], string> handler) {
+			Logger.n($"Added stringinliner method {method} token {method.MDToken}");
 			if (method != null)
 				stringDecrypters.Add(method, handler);
 		}
